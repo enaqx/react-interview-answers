@@ -9,7 +9,8 @@
   "dependencies": {
     "express": "~4.x",
     "react": "^0.11.0",
-    "react-router": "0.5.x"
+    "react-router": "0.5.x",
+    "underscore": "1.7.0"
   },
   "devDependencies": {
     "jsx-loader": "^0.10.2",

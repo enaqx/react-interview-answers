@@ -1,4 +1,4 @@
-React sample 1
+React Interview Answers
 
 Usage:
  * `$ npm install`
