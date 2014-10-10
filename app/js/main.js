@@ -1,6 +1,7 @@
 /** @jsx React.DOM */
 
 var AverageAggregation = require('./averageAggregation');
+var BarChart = require('./barChart');
 
 /* === Question 1 === */
 var WebTools = React.createClass({
@@ -43,7 +44,6 @@ var FixObject = React.createClass({
     this.setState({items: nextItems, text: nextText});
   },
   render: function() {
-    var value = this.state.value;
     return <div>
       <p/>Input comma-separated Numbers:
       <form onSubmit={this.handleSubmit}>
@@ -55,26 +55,14 @@ var FixObject = React.createClass({
   }
 });
 
-/* === Question 3 === */
-/** @jsx React.DOM */
-
-var LikeButton = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
-  handleClick: function(event) {
-    this.setState({liked: !this.state.liked});
-  },
+/* === Question 3 and 4 === */
+var Link = React.createClass({
   render: function() {
-    var text = this.state.liked ? 'like' : 'unlike';
-    return (
-      <p onClick={this.handleClick}>
-        You {text} this. Click to toggle.
-      </p>
-    );
+    return <a href={this.props.link}>Naive code here</a>
   }
-});
+})
 
+/* === Rendering === */
 
 React.renderComponent(
   <WebTools 
@@ -88,12 +76,22 @@ React.renderComponent(
 );
 
 React.renderComponent(
-  <FixObject name="World" />,
+  <FixObject />,
   document.getElementById('question2')
 );
 
 
 React.renderComponent(
-  <LikeButton />,
+  <Link link="http://google.com" />,
   document.getElementById('question3')
+);
+
+React.renderComponent(
+  <Link link="http://facebook.com" />,
+  document.getElementById('question4')
+);
+
+React.renderComponent(
+  <BarChart width={100} height={100} />,
+  document.getElementById('question5')
 );
